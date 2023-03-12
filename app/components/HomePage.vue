@@ -89,12 +89,14 @@
 <script>
 import ActionBar from "./ActionBar";
 import YearOnePage from "./YearOnePage";
+import YearTwoPage from "./YearTwoPage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
   data() {
     return {
       YearOnePage: YearOnePage,
+      YearTwoPage: YearTwoPage,
       accounts: [
         {
           name: "First Year",
@@ -112,6 +114,7 @@ export default {
           score: "Score: 4.4",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
+          page: YearTwoPage,
         },
         {
           name: "Assessments",
