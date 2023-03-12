@@ -131,10 +131,9 @@
 <script>
 import { closeDrawer } from "~/shared/utils";
 import HomePage from "./HomePage";
-import Branch from "./BranchPage";
-import Tip from "./TipPage";
 import Faq from "./FaqPage";
 import LoginPage from "./LoginPage";
+import YearOnePage from "./YearOnePage";
 import SimplePayPage from "./SimplePayPage";
 import LmsUpdatePage from "./LmsUpdatePage";
 
@@ -142,10 +141,9 @@ export default {
   data() {
     return {
       HomePage: HomePage,
-      Branch: Branch,
-      Tip: Tip,
       Faq: Faq,
       LoginPage: LoginPage,
+      YearOnePage: YearOnePage,
       SimplePayPage: SimplePayPage,
       LmsUpdatePage: LmsUpdatePage,
     };

@@ -19,6 +19,7 @@
                   columns="230,*"
                   rows="100"
                   :class="item.wrapper"
+                  @tap="onNavigationItemTap(item.page)"
                 >
                   <FlexboxLayout col="0" class="bottom items-center ml-5">
                     <Image
@@ -37,7 +38,7 @@
 
                   <FlexboxLayout col="1" class="bottom-controls items-center">
                     <Label
-                      :text="item.ballance"
+                      :text="item.score"
                       class="text-black text-lg font-bold"
                       textWrap="true"
                     />
@@ -87,25 +88,28 @@
 
 <script>
 import ActionBar from "./ActionBar";
+import YearOnePage from "./YearOnePage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
   data() {
     return {
+      YearOnePage: YearOnePage,
       accounts: [
         {
           name: "First Year",
           status: "Completed",
           image: "~/asserts/img/savings.png",
-          ballance: "Score: 4.0",
+          score: "Score: 4.0",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl",
           style: "bottom-title text-base text-blue-500 font-extrabold",
+          page: YearOnePage,
         },
         {
           name: "Second Year",
           status: "Completed",
           image: "~/asserts/img/livebetter.png",
-          ballance: "Score: 4.4",
+          score: "Score: 4.4",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
         },
@@ -113,14 +117,14 @@ export default {
           name: "Assessments",
           status: "Completed",
           image: "~/asserts/img/livebetter.png",
-          ballance: "Score: 5.0",
+          score: "Score: 5.0",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
         },
         {
           name: "Reviews",
           image: "~/asserts/img/credit.png",
-          ballance: "Total: 36",
+          score: "Total: 36",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-400 font-extrabold",
         },
