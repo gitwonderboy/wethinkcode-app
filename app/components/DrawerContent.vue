@@ -158,13 +158,6 @@ export default {
       });
       closeDrawer();
     },
-
-    onLogoutTap() {
-      this.$navigateTo(LoginPage, {
-        clearHistory: true,
-      });
-      closeDrawer();
-    },
   },
 };
 </script>

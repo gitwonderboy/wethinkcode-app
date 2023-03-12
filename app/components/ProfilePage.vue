@@ -11,6 +11,12 @@
           />
 
           <StackLayout class="bottoms rounded-t-3xl rounded-b-3xl p-2">
+            <FlexboxLayout @tap="onLogoutTap" class="justify-center items-center mt-2">
+              <Label
+                text="Sign Out"
+                class="text-base uppercase border-x-4 border-blue-400 font-bold text-gray-500 p-2 rounded-full px-2"
+              />
+            </FlexboxLayout>
             <StackLayout>
               <GridLayout
                 v-for="(item, index) in accounts"
@@ -101,6 +107,7 @@
 import ActionBar from "./ActionBar";
 import YearOnePage from "./YearOnePage";
 import YearTwoPage from "./YearTwoPage";
+import LoginPage from "./LoginPage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
@@ -108,6 +115,7 @@ export default {
     return {
       YearOnePage: YearOnePage,
       YearTwoPage: YearTwoPage,
+      LoginPage: LoginPage,
       accounts: [
         {
           cohort: "Cohort : 2021",
@@ -131,6 +139,12 @@ export default {
     onNavigationItemTap(component) {
       this.$navigateTo(component, {
         clearHistory: false,
+      });
+    },
+
+    onLogoutTap() {
+      this.$navigateTo(LoginPage, {
+        clearHistory: true,
       });
     },
 

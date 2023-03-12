@@ -85,17 +85,17 @@ export default {
       newsletters: [
         {
           title: "Year 1 Semester 1 Report",
-          date: "2023-01-28",
+          date: "2021-11-10",
           link: "https://www.simplepay.co.za/login",
         },
         {
           title: "Year 2 Semester 2 Report",
-          date: "2023-02-28",
+          date: "2022-04-25",
           link: "https://www.simplepay.co.za/login",
         },
         {
           title: "Final Progress Report",
-          date: "2023-03-28",
+          date: "2023-01-30",
           link: "https://www.simplepay.co.za/login",
         },
       ],
