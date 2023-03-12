@@ -35,7 +35,7 @@
 
         <GridLayout
           columns="50, *"
-          class="py-3 pl-4"
+          class="py-3 pl-3"
           @tap="onNavigationItemTap(HomePage)"
         >
           <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
@@ -44,7 +44,7 @@
 
         <GridLayout
           columns="50, *"
-          class="py-3 pl-4"
+          class="py-3 pl-3"
           @tap="onNavigationItemTap(HomePage)"
         >
           <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
@@ -53,7 +53,7 @@
 
         <GridLayout
           columns="50, *"
-          class="py-3 pl-4"
+          class="py-3 pl-3"
           @tap="onNavigationItemTap(HomePage)"
         >
           <Label col="0" text.decode="&#xf121;" class="w-10 nt-icon fas text-lg" />
@@ -62,7 +62,7 @@
 
         <GridLayout
           columns="50, *"
-          class="py-3 pl-4"
+          class="py-3 pl-3"
           @tap="onNavigationItemTap(HomePage)"
         >
           <Label col="0" text.decode="&#xf073;" class="w-10 nt-icon fas text-lg" />
@@ -71,8 +71,8 @@
 
         <GridLayout
           columns="50, *"
-          class="py-3 pl-4"
-          @tap="onNavigationItemTap(HomePage)"
+          class="py-3 pl-3"
+          @tap="onNavigationItemTap(LmsUpdatePage)"
         >
           <Label col="0" text.decode="&#xf4fe;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="LMS Updates" class="font-bold text-base" />
@@ -81,7 +81,7 @@
         <GridLayout
           columns="50, *"
           class="pl-2 py-3"
-          @tap="onNavigationItemTap(HomePage)"
+          @tap="onNavigationItemTap(SimplePayPage)"
         >
           <Image
             col="0"
@@ -94,7 +94,7 @@
 
         <StackLayout class="hr" />
 
-        <GridLayout columns="50, *" class="pl-4 py-3">
+        <GridLayout columns="50, *" class="pl-3 py-3">
           <Image
             col="0"
             class="w-5 h-5 mr-5"
@@ -104,7 +104,7 @@
           <Label col="1" text="Slack" class="font-bold text-base" />
         </GridLayout>
 
-        <GridLayout columns="50, *" class="pl-4 py-3">
+        <GridLayout columns="50, *" class="pl-3 py-3">
           <Image
             col="0"
             class="w-5 h-5 mr-5"
@@ -119,7 +119,7 @@
           <Label col="1" text="Curriculum" class="font-bold text-base" />
         </GridLayout>
 
-        <GridLayout columns="50, *" class="pl-4 py-3" @tap="onNavigationItemTap(Faq)">
+        <GridLayout columns="50, *" class="pl-3 py-3" @tap="onNavigationItemTap(Faq)">
           <Label col="0" text.decode="&#xf086;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="FAQS" class="font-bold text-base" />
         </GridLayout>
@@ -129,13 +129,14 @@
 </template>
 
 <script>
+import { closeDrawer } from "~/shared/utils";
 import HomePage from "./HomePage";
 import Branch from "./BranchPage";
 import Tip from "./TipPage";
 import Faq from "./FaqPage";
 import LoginPage from "./LoginPage";
-
-import * as utils from "~/shared/utils";
+import SimplePayPage from "./SimplePayPage";
+import LmsUpdatePage from "./LmsUpdatePage";
 
 export default {
   data() {
@@ -145,15 +146,9 @@ export default {
       Tip: Tip,
       Faq: Faq,
       LoginPage: LoginPage,
+      SimplePayPage: SimplePayPage,
+      LmsUpdatePage: LmsUpdatePage,
     };
-  },
-
-  components: {
-    HomePage,
-    Branch,
-    Tip,
-    Faq,
-    LoginPage,
   },
 
   methods: {
@@ -161,14 +156,14 @@ export default {
       this.$navigateTo(component, {
         clearHistory: false,
       });
-      utils.closeDrawer();
+      closeDrawer();
     },
 
     onLogoutTap() {
       this.$navigateTo(LoginPage, {
         clearHistory: true,
       });
-      utils.closeDrawer();
+      closeDrawer();
     },
   },
 };

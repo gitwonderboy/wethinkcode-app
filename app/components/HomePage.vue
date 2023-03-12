@@ -11,7 +11,7 @@
           />
 
           <StackLayout class="bottoms rounded-t-3xl rounded-b-3xl p-2">
-            <ScrollView row="0" orientation="vertical Session" height="210">
+            <ScrollView row="0" orientation="vertical Session" height="310">
               <StackLayout>
                 <GridLayout
                   v-for="(item, index) in accounts"
@@ -28,7 +28,10 @@
                     />
                     <StackLayout>
                       <Label :text="item.name" :class="item.style" />
-                      <Label text="Account Balance" class="text-gray-600 text-base" />
+                      <FlexboxLayout>
+                        <Label text="Status: " class="text-gray-600 text-base" />
+                        <Label :text="item.status" class="text-gray-600 text-base" />
+                      </FlexboxLayout>
                     </StackLayout>
                   </FlexboxLayout>
 
@@ -53,8 +56,8 @@
             class="size-button justify-center items-center rounded-xl mr-1"
           >
             <StackLayout>
-              <Image class="capiteclogo w-7" src="~/asserts/img/message.png" />
-              <Label text="Messages" class="text-gray-600 text-base" />
+              <Image class="capiteclogo w-8" src="~/asserts/img/user.png" />
+              <Label text="Profile" class="text-gray-600 text-base" />
             </StackLayout>
           </FlexboxLayout>
           <FlexboxLayout
@@ -62,17 +65,18 @@
             class="size-button justify-center items-center rounded-xl mr-1"
           >
             <StackLayout>
-              <Image class="capiteclogo w-9" src="~/asserts/img/transaction.png" />
-              <Label text="Transact" class="text-gray-600 text-base" />
+              <Image class="capiteclogo w-8" src="~/asserts/img/message.png" />
+              <Label text="Messages" class="text-gray-600 text-base" />
             </StackLayout>
           </FlexboxLayout>
           <FlexboxLayout
+            @tap="onDrawerButtonTap"
             col="2"
             class="size-button justify-center items-center rounded-xl"
           >
             <StackLayout>
-              <Image class="capiteclogo w-9" src="~/asserts/img/credit-card.png" />
-              <Label text="Cards" class="text-gray-600 text-base" />
+              <Image class="capiteclogo w-8" src="~/asserts/img/dashboard.png" />
+              <Label text="Menu" class="text-gray-600 text-base" />
             </StackLayout>
           </FlexboxLayout>
         </GridLayout>
@@ -83,29 +87,40 @@
 
 <script>
 import ActionBar from "./ActionBar";
+import { showDrawer } from "~/shared/utils";
 
 export default {
   data() {
     return {
       accounts: [
         {
-          name: "Savings Account",
+          name: "First Year",
+          status: "Completed",
           image: "~/asserts/img/savings.png",
-          ballance: "R 150.50",
+          ballance: "Score: 4.0",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl",
           style: "bottom-title text-base text-blue-500 font-extrabold",
         },
         {
-          name: "Live Better Account",
+          name: "Second Year",
+          status: "Completed",
           image: "~/asserts/img/livebetter.png",
-          ballance: "R 1000.76",
+          ballance: "Score: 4.4",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
         },
         {
-          name: "Credit Card",
+          name: "Assessments",
+          status: "Completed",
+          image: "~/asserts/img/livebetter.png",
+          ballance: "Score: 5.0",
+          wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
+          style: "bottom-title text-base text-blue-700 font-extrabold",
+        },
+        {
+          name: "Reviews",
           image: "~/asserts/img/credit.png",
-          ballance: "R 5050.10",
+          ballance: "Total: 36",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-400 font-extrabold",
         },
@@ -120,11 +135,8 @@ export default {
       });
     },
 
-    viewProduct(item) {
-      this.$navigateTo(ViewPage, {
-        props: { item: item },
-        clearHistory: false,
-      });
+    onDrawerButtonTap() {
+      showDrawer();
     },
   },
 

@@ -20,48 +20,26 @@
         </FlexboxLayout>
       </GridLayout>
 
-      <GridLayout columns="*, *, *">
-        <FlexboxLayout col="0" class="justify-center items-center">
-          <StackLayout
-            class="inactive-icon fas text-blue-400 mt-3 text-center text-xl font-extrabold"
-          >
-            <Image class="capiteclogo w-6" src="~/asserts/img/user.png" />
-          </StackLayout>
-        </FlexboxLayout>
-
-        <FlexboxLayout
-          col="1"
-          class="justify-center items-center"
-          @tap="onNavigationItemTap()"
-        >
-          <StackLayout :class="active">
-            <Image class="capiteclogo w-9" src="~/asserts/img/cap-logo.png" />
-          </StackLayout>
-        </FlexboxLayout>
-
-        <FlexboxLayout
-          col="2"
-          class="justify-center items-center"
-          @tap="onDrawerButtonTap"
-        >
-          <StackLayout
-            class="inactive-icon fas text-blue-400 mt-3 text-center text-xl font-extrabold"
-          >
-            <Image class="capiteclogo w-5" src="~/asserts/img/dashboard.png" />
-          </StackLayout>
-        </FlexboxLayout>
-      </GridLayout>
+      <FlexboxLayout
+        col="1"
+        class="justify-center items-center"
+        @tap="onNavigationItemTap()"
+      >
+        <StackLayout :class="active">
+          <Image class="capiteclogo w-8" src="~/asserts/img/wtc-logo.png" />
+        </StackLayout>
+      </FlexboxLayout>
     </StackLayout>
   </ActionBar>
 </template>
 
 <script>
-import * as utils from "~/shared/utils";
+import { showDrawer } from "~/shared/utils";
 
 export default {
   data() {
     return {
-      active: "active-icon bg-white p-2 rounded-tl-full rounded-tr-full",
+      active: "active-icon bg-white pt-3 px-3 rounded-tl-full rounded-tr-full",
       inactive: "inactive-icon fas text-blue-400 text-center text-xl font-extrabold",
     };
   },
@@ -76,7 +54,7 @@ export default {
     },
 
     onDrawerButtonTap() {
-      utils.showDrawer();
+      showDrawer();
     },
   },
 };
