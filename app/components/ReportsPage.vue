@@ -23,8 +23,13 @@
                 <StackLayout class="w-full">
                   <Label
                     textWrap="true"
+                    text="Performance Team"
+                    class="font-bold text-lg text-blue-400 leading-none"
+                  />
+                  <Label
+                    textWrap="true"
                     :text="item.title"
-                    class="font-bold text-lg text-green-600 leading-none"
+                    class="font-bold text-base text-blue-700 leading-none"
                   />
                   <FlexboxLayout class="justify-start items-center">
                     <Label
@@ -79,17 +84,17 @@ export default {
       screenHeight: screenHeight,
       newsletters: [
         {
-          title: "SimplePay",
+          title: "Year 1 Semester 1 Report",
           date: "2023-01-28",
           link: "https://www.simplepay.co.za/login",
         },
         {
-          title: "SimplePay",
+          title: "Year 2 Semester 2 Report",
           date: "2023-02-28",
           link: "https://www.simplepay.co.za/login",
         },
         {
-          title: "SimplePay",
+          title: "Final Progress Report",
           date: "2023-03-28",
           link: "https://www.simplepay.co.za/login",
         },

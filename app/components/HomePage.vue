@@ -92,6 +92,7 @@ import ActionBar from "./ActionBar";
 import YearOnePage from "./YearOnePage";
 import YearTwoPage from "./YearTwoPage";
 import ProfilePage from "./ProfilePage";
+import ReportsPage from "./ReportsPage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
@@ -100,6 +101,7 @@ export default {
       YearOnePage: YearOnePage,
       YearTwoPage: YearTwoPage,
       ProfilePage: ProfilePage,
+      ReportsPage: ReportsPage,
       accounts: [
         {
           name: "First Year",
@@ -133,7 +135,7 @@ export default {
           image: "~/asserts/img/credit.png",
           score: "Total: 36",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
-          style: "bottom-title text-base text-blue-400 font-extrabold",
+          style: "bottom-title text-base text-blue-700 font-extrabold",
         },
         {
           name: "Progress Report",
@@ -142,6 +144,7 @@ export default {
           score: "Total: 3",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-400 font-extrabold",
+          page: ReportsPage,
         },
       ],
     };
