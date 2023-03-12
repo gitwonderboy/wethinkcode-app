@@ -36,7 +36,7 @@
         <GridLayout
           columns="50, *"
           class="py-3 pl-3"
-          @tap="onNavigationItemTap(HomePage)"
+          @tap="onNavigationItemTap(YearOnePage)"
         >
           <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="Year One" class="font-bold text-base" />
@@ -45,7 +45,7 @@
         <GridLayout
           columns="50, *"
           class="py-3 pl-3"
-          @tap="onNavigationItemTap(HomePage)"
+          @tap="onNavigationItemTap(YearTwoPage)"
         >
           <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="Year Two" class="font-bold text-base" />
@@ -134,6 +134,7 @@ import HomePage from "./HomePage";
 import Faq from "./FaqPage";
 import LoginPage from "./LoginPage";
 import YearOnePage from "./YearOnePage";
+import YearTwoPage from "./YearTwoPage";
 import SimplePayPage from "./SimplePayPage";
 import LmsUpdatePage from "./LmsUpdatePage";
 
@@ -144,6 +145,7 @@ export default {
       Faq: Faq,
       LoginPage: LoginPage,
       YearOnePage: YearOnePage,
+      YearTwoPage: YearTwoPage,
       SimplePayPage: SimplePayPage,
       LmsUpdatePage: LmsUpdatePage,
     };

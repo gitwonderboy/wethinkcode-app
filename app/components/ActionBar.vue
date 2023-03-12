@@ -23,7 +23,7 @@
       <FlexboxLayout
         col="1"
         class="justify-center items-center"
-        @tap="onNavigationItemTap()"
+        @tap="onNavigationItemTap(HomePage)"
       >
         <StackLayout :class="active">
           <Image class="capiteclogo w-8" src="~/asserts/img/wtc-logo.png" />
@@ -34,11 +34,13 @@
 </template>
 
 <script>
+import HomePage from "./HomePage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
   data() {
     return {
+      HomePage: HomePage,
       active: "active-icon bg-white pt-3 px-3 rounded-tl-full rounded-tr-full",
       inactive: "inactive-icon fas text-blue-400 text-center text-xl font-extrabold",
     };

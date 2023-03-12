@@ -53,6 +53,7 @@
       <FlexboxLayout row="1" class="px-4 justify-center items-center">
         <GridLayout columns="*,*,*" rows="70" class="action-button">
           <FlexboxLayout
+            @tap="onNavigationItemTap(ProfilePage)"
             col="0"
             class="size-button justify-center items-center rounded-xl mr-1"
           >
@@ -90,6 +91,7 @@
 import ActionBar from "./ActionBar";
 import YearOnePage from "./YearOnePage";
 import YearTwoPage from "./YearTwoPage";
+import ProfilePage from "./ProfilePage";
 import { showDrawer } from "~/shared/utils";
 
 export default {
@@ -97,6 +99,7 @@ export default {
     return {
       YearOnePage: YearOnePage,
       YearTwoPage: YearTwoPage,
+      ProfilePage: ProfilePage,
       accounts: [
         {
           name: "First Year",
@@ -113,7 +116,7 @@ export default {
           image: "~/asserts/img/livebetter.png",
           score: "Score: 4.4",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
-          style: "bottom-title text-base text-blue-700 font-extrabold",
+          style: "bottom-title text-base text-blue-500 font-extrabold",
           page: YearTwoPage,
         },
         {
@@ -126,8 +129,17 @@ export default {
         },
         {
           name: "Reviews",
+          status: "Completed",
           image: "~/asserts/img/credit.png",
           score: "Total: 36",
+          wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
+          style: "bottom-title text-base text-blue-400 font-extrabold",
+        },
+        {
+          name: "Progress Report",
+          status: "Available",
+          image: "~/asserts/img/credit.png",
+          score: "Total: 3",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-400 font-extrabold",
         },
