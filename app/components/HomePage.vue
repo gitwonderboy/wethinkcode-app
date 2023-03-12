@@ -106,7 +106,7 @@ export default {
         {
           name: "First Year",
           status: "Completed",
-          image: "~/asserts/img/savings.png",
+          image: "~/asserts/img/curriculum.png",
           score: "Score: 4.0",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl",
           style: "bottom-title text-base text-blue-500 font-extrabold",
@@ -115,7 +115,7 @@ export default {
         {
           name: "Second Year",
           status: "Completed",
-          image: "~/asserts/img/livebetter.png",
+          image: "~/asserts/img/curriculum.png",
           score: "Score: 4.4",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-500 font-extrabold",
@@ -124,7 +124,7 @@ export default {
         {
           name: "Assessments",
           status: "Completed",
-          image: "~/asserts/img/livebetter.png",
+          image: "~/asserts/img/curriculum.png",
           score: "Score: 5.0",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
@@ -132,7 +132,7 @@ export default {
         {
           name: "Reviews",
           status: "Completed",
-          image: "~/asserts/img/credit.png",
+          image: "~/asserts/img/reviews.png",
           score: "Total: 36",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-700 font-extrabold",
@@ -140,7 +140,7 @@ export default {
         {
           name: "Progress Report",
           status: "Available",
-          image: "~/asserts/img/credit.png",
+          image: "~/asserts/img/report.png",
           score: "Total: 3",
           wrapper: "bottom bg-white rounded-t-3xl rounded-b-3xl mt-2",
           style: "bottom-title text-base text-blue-400 font-extrabold",

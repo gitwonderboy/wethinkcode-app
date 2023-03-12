@@ -4,17 +4,17 @@
       <GridLayout columns="auto,*" class="user-icon">
         <FlexboxLayout class="justify-center items-center">
           <StackLayout col="0" class="py-4 ml-4">
-            <Image src="~/asserts/img/codelad.png" class="logo rounded-full w-16 h-16" />
+            <Image src="~/asserts/img/student.png" class="logo rounded-full w-16 h-16" />
           </StackLayout>
           <StackLayout col="1" class="ml-4">
             <Label
-              text="Mr WT Mthiyane"
+              text="Cohort : 2021"
               class="card-title text-lg font-bold uppercase text-white"
             />
             <Label
               textWrap="true"
-              text="1560031240"
-              class="card-title text-sm text-white"
+              text="Capmus : Durban"
+              class="card-title text-sm font-bold uppercase text-white"
             />
           </StackLayout>
         </FlexboxLayout>
