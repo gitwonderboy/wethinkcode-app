@@ -10,5 +10,6 @@
 		}
 	],
 	"NativescriptExtend.format.enabled": true,
-	"NativescriptExtend.validation.enabled": true
+	"NativescriptExtend.validation.enabled": true,
+	"vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

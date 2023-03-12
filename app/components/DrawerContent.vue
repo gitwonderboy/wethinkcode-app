@@ -1,100 +1,195 @@
-<template lang="html">
-    <GridLayout rows="auto, *" class="nt-drawer__content">
-        <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" src.decode="font://&#xf2bd;"/>
-            <Label class="nt-drawer__header-brand" text="User Name"/>
-            <Label class="nt-drawer__header-footnote" text="username@mail.com"/>
-        </StackLayout>
+<template class="drawer">
+  <GridLayout rows="*, auto">
+    <StackLayout row="1">
+      <GridLayout columns="auto,*" class="user-icon">
+        <FlexboxLayout class="justify-center items-center">
+          <StackLayout col="0" class="py-4 ml-4">
+            <Image src="~/asserts/img/codelad.png" class="logo rounded-full w-16 h-16" />
+          </StackLayout>
+          <StackLayout col="1" class="ml-4">
+            <Label
+              text="Mr WT Mthiyane"
+              class="card-title text-lg font-bold uppercase text-white"
+            />
+            <Label
+              textWrap="true"
+              text="1560031240"
+              class="card-title text-sm text-white"
+            />
+          </StackLayout>
+        </FlexboxLayout>
+      </GridLayout>
+    </StackLayout>
 
-        <ScrollView row="1" class="nt-drawer__body">
-            <StackLayout>
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Home)">
-                    <Label col="0" text.decode="&#xf015;" class="nt-icon fas"/>
-                    <Label col="1" text="Home" class="p-r-10"/>
-                </GridLayout>
+    <ScrollView row="0" class="page-scroller nt-drawer__body">
+      <StackLayout class="bg-slate-100">
+        <GridLayout columns="50, *" class="py-3" @tap="onNavigationItemTap(HomePage)">
+          <Image
+            col="0"
+            class="w-7"
+            src="~/asserts/img/wtc-logo.png"
+            stretch="aspectFill"
+          />
+          <Label col="1" text="Home" class="p-l-12 font-bold text-base" />
+        </GridLayout>
 
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Browse)">
-                    <Label col="0" text.decode="&#xf1ea;" class="nt-icon far"/>
-                    <Label col="1" text="Browse" class="p-r-10"/>
-                </GridLayout>
+        <GridLayout
+          columns="50, *"
+          class="py-3 pl-4"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="Year One" class="font-bold text-base" />
+        </GridLayout>
 
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Search' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Search)">
-                    <Label col="0" text.decode="&#xf002;" class="nt-icon fas"/>
-                    <Label col="1" text="Search" class="p-r-10"/>
-                </GridLayout>
+        <GridLayout
+          columns="50, *"
+          class="py-3 pl-4"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Label col="0" text.decode="&#xf51c;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="Year Two" class="font-bold text-base" />
+        </GridLayout>
 
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Featured)">
-                    <Label col="0" text.decode="&#xf005;" class="nt-icon fas"/>
-                    <Label col="1" text="Featured" class="p-r-10"/>
-                </GridLayout>
+        <GridLayout
+          columns="50, *"
+          class="py-3 pl-4"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Label col="0" text.decode="&#xf121;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="Reviews" class="font-bold text-base" />
+        </GridLayout>
 
-                <StackLayout class="hr"/>
+        <GridLayout
+          columns="50, *"
+          class="py-3 pl-4"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Label col="0" text.decode="&#xf073;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="Calendar" class="font-bold text-base" />
+        </GridLayout>
 
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Settings)">
-                    <Label col="0" text.decode="&#xf013;" class="nt-icon fas"/>
-                    <Label col="1" text="Settings" class="p-r-10"/>
-                </GridLayout>
-            </StackLayout>
-        </ScrollView>
-    </GridLayout>
+        <GridLayout
+          columns="50, *"
+          class="py-3 pl-4"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Label col="0" text.decode="&#xf4fe;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="LMS Updates" class="font-bold text-base" />
+        </GridLayout>
+
+        <GridLayout
+          columns="50, *"
+          class="pl-2 py-3"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <Image
+            col="0"
+            class="w-5 mr-2"
+            src="~/asserts/img/pay.png"
+            stretch="aspectFill"
+          />
+          <Label col="1" text="SimplePay" class="font-bold text-base" />
+        </GridLayout>
+
+        <StackLayout class="hr" />
+
+        <GridLayout columns="auto, *" class="pl-4 py-3">
+          <Image
+            col="0"
+            class="w-5 h-5 mr-5"
+            src="~/asserts/img/slack.png"
+            stretch="aspectFill"
+          />
+          <Label col="1" text="Slack" class="font-bold text-base" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *" class="pl-4 py-3">
+          <Image
+            col="0"
+            class="w-5 h-5 mr-5"
+            src="~/asserts/img/gallery.png"
+            stretch="aspectFill"
+          />
+          <Label col="1" text="Media" class="font-bold text-base" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *" class="pl-4 py-3">
+          <Label col="0" text.decode="&#xf129;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="Curriculum" class="font-bold text-base" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *" class="pl-4 py-3" @tap="onNavigationItemTap(Faq)">
+          <Label col="0" text.decode="&#xf086;" class="w-10 nt-icon fas text-lg" />
+          <Label col="1" text="FAQS" class="font-bold text-base" />
+        </GridLayout>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
 </template>
 
 <script>
-  import Home from "./Home";
-  import Browse from "./Browse";
-  import Featured from "./Featured";
-  import Search from "./Search";
-  import Settings from "./Settings";
-  import * as utils from "~/shared/utils";
-  import { SelectedPageService } from "~/shared/selected-page-service";
+import HomePage from "./HomePage";
+import Branch from "./BranchPage";
+import Tip from "./TipPage";
+import Faq from "./FaqPage";
+import LoginPage from "./LoginPage";
 
-  export default {
-    mounted() {
-      SelectedPageService.getInstance().selectedPage$
-        .subscribe((selectedPage) => this.selectedPage = selectedPage);
+import * as utils from "~/shared/utils";
+
+export default {
+  data() {
+    return {
+      HomePage: HomePage,
+      Branch: Branch,
+      Tip: Tip,
+      Faq: Faq,
+      LoginPage: LoginPage,
+    };
+  },
+
+  components: {
+    HomePage,
+    Branch,
+    Tip,
+    Faq,
+    LoginPage,
+  },
+
+  methods: {
+    onNavigationItemTap(component) {
+      this.$navigateTo(component, {
+        clearHistory: false,
+      });
+      utils.closeDrawer();
     },
-    data() {
-      return {
-        Home: Home,
-        Browse: Browse,
-        Featured: Featured,
-        Search: Search,
-        Settings: Settings,
-        selectedPage: ""
-      };
+
+    onLogoutTap() {
+      this.$navigateTo(LoginPage, {
+        clearHistory: true,
+      });
+      utils.closeDrawer();
     },
-    components: {
-      Home,
-      Browse,
-      Featured,
-      Search,
-      Settings
-    },
-    methods: {
-      onNavigationItemTap(component) {
-        this.$navigateTo(component, {
-          clearHistory: true
-        });
-        utils.closeDrawer();
-      }
-    }
-  };
+  },
+};
 </script>
 
-<style scoped lang="scss">
-    // Start custom common variables
-    @import '@nativescript/theme/scss/variables/blue';
-    // End custom common variables
+<style scoped lang="css">
+.size-button {
+  background: rgb(30, 129, 176);
+  background: linear-gradient(180deg, rgba(30, 129, 176, 1) 13%, rgba(0, 72, 109, 1) 73%);
+}
 
-    // Custom styles
+.user-icon {
+  background: rgb(27, 117, 157);
+  background: linear-gradient(
+    235deg,
+    rgba(27, 117, 157, 1) 0%,
+    rgba(75, 130, 194, 1) 77%
+  );
+}
+
+.nt-icon {
+  color: #00486d;
+}
 </style>
