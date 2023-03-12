@@ -99,10 +99,10 @@ export default {
 }
 
 .faqs .faq-q {
-  background-color: #e43d3c;
+  background-color: #4b82c2;
 }
 
 .faqs .faq-a {
-  background-color: #004f7a;
+  background-color: #3dc391;
 }
 </style>

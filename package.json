@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@nativescript/core": "~8.4.0",
+    "@nativescript/social-share": "^2.3.0",
     "@nativescript/tailwind": "^2.0.1",
     "@nativescript/theme": "~3.0.2",
     "nativescript-ui-sidedrawer": "~14.2.1",

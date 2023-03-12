@@ -94,7 +94,7 @@
 
         <StackLayout class="hr" />
 
-        <GridLayout columns="auto, *" class="pl-4 py-3">
+        <GridLayout columns="50, *" class="pl-4 py-3">
           <Image
             col="0"
             class="w-5 h-5 mr-5"
@@ -104,22 +104,22 @@
           <Label col="1" text="Slack" class="font-bold text-base" />
         </GridLayout>
 
-        <GridLayout columns="auto, *" class="pl-4 py-3">
+        <GridLayout columns="50, *" class="pl-4 py-3">
           <Image
             col="0"
             class="w-5 h-5 mr-5"
             src="~/asserts/img/gallery.png"
             stretch="aspectFill"
           />
-          <Label col="1" text="Media" class="font-bold text-base" />
+          <Label col="1" text="Gallery" class="font-bold text-base" />
         </GridLayout>
 
-        <GridLayout columns="auto, *" class="pl-4 py-3">
+        <GridLayout columns="50, *" class="pl-4 py-3">
           <Label col="0" text.decode="&#xf129;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="Curriculum" class="font-bold text-base" />
         </GridLayout>
 
-        <GridLayout columns="auto, *" class="pl-4 py-3" @tap="onNavigationItemTap(Faq)">
+        <GridLayout columns="50, *" class="pl-4 py-3" @tap="onNavigationItemTap(Faq)">
           <Label col="0" text.decode="&#xf086;" class="w-10 nt-icon fas text-lg" />
           <Label col="1" text="FAQS" class="font-bold text-base" />
         </GridLayout>
