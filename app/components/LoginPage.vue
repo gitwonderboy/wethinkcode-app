@@ -46,7 +46,6 @@
                   />
                   <TextField
                     col="1"
-                    secure="true"
                     :text="password"
                     hint="Password"
                     class="text-lg mt-2"

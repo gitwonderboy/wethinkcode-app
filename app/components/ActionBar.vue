@@ -20,15 +20,61 @@
         </FlexboxLayout>
       </GridLayout>
 
-      <FlexboxLayout
-        col="1"
-        class="justify-center items-center"
-        @tap="onNavigationItemTap(HomePage)"
-      >
-        <StackLayout :class="active">
-          <Image class="capiteclogo w-8" src="~/asserts/img/wtc-logo.png" />
-        </StackLayout>
-      </FlexboxLayout>
+      <GridLayout columns="*, *, *, *, *">
+        <FlexboxLayout
+          col="0"
+          class="justify-center items-center"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <FlexboxLayout class="mt-1 justify-end items-end">
+            <Label
+              class="action-icons fas text-2xl p-2 w-12 h-12 text-center rounded-full mr-2"
+              text.decode="&#xf015;"
+            />
+          </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout col="1" class="justify-center items-center">
+          <FlexboxLayout class="mt-1 justify-end items-end">
+            <Label
+              class="action-icons fas text-2xl p-2 w-12 h-12 text-center rounded-full mr-2"
+              text.decode="&#xf007;"
+            />
+          </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout
+          col="2"
+          class="justify-center items-center"
+          @tap="onNavigationItemTap(HomePage)"
+        >
+          <StackLayout class="bg-white p-2 rounded-tl-2xl rounded-tr-2xl">
+            <Image class="svp-logo w-10" src="~/asserts/img/wtc-logo.png" />
+          </StackLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout col="3" class="justify-center items-center">
+          <FlexboxLayout class="mt-1 justify-end items-end">
+            <Label
+              class="action-icons fas text-2xl p-2 w-12 h-12 text-center rounded-full mr-2"
+              text.decode="&#xf658;"
+            />
+          </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout
+          col="4"
+          class="justify-center items-center"
+          @tap="onDrawerButtonTap"
+        >
+          <FlexboxLayout class="mt-1 justify-end items-end">
+            <Label
+              class="action-icons fas text-2xl p-2 w-12 h-12 text-center rounded-full mr-2"
+              text.decode="&#xf1de;"
+            />
+          </FlexboxLayout>
+        </FlexboxLayout>
+      </GridLayout>
     </StackLayout>
   </ActionBar>
 </template>
@@ -65,5 +111,13 @@ export default {
 <style scoped lang="css">
 .action-bar {
   background-color: #f7f7f7;
+}
+
+.action-icons {
+  color: #4b82c2;
+}
+
+.action-icons-top {
+  color: #636363;
 }
 </style>
